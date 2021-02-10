@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Ascensore_thread_school.Ascensore">
+    <Position X="2.5" Y="1" Width="1.5" />
+    <NestedTypes>
+      <Enum Name="Ascensore_thread_school.Ascensore.Piano" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Ascensore.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAwAAABCAAAAABAAAAAABAAAAAAABAAQAEACABAAAAA=</HashCode>
+      <FileName>Ascensore.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Ascensore_thread_school.Persona">
+    <Position X="5.25" Y="1" Width="1.5" />
+    <NestedTypes>
+      <Enum Name="Ascensore_thread_school.Persona.Piano" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Persona.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AACAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAA=</HashCode>
+      <FileName>Persona.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Ascensore_thread_school.Prenotazione">
+    <Position X="5.25" Y="2.75" Width="1.5" />
+    <NestedTypes>
+      <Enum Name="Ascensore_thread_school.Prenotazione.Piano" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Prenotazione.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAgAA=</HashCode>
+      <FileName>Prenotazione.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
