@@ -10,9 +10,13 @@
       </Enum>
     </NestedTypes>
     <TypeIdentifier>
-      <HashCode>AAwAAABCAAAAABAAAAAABAAAAAAABAAQAEACABAAAAA=</HashCode>
+      <HashCode>CAgAAABCAAAAABAAAAAABAAAAgAAhAAQAAACABBAAAA=</HashCode>
       <FileName>Ascensore.cs</FileName>
     </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Field Name="_personeDentroAscensore" />
+      <Field Name="_prenotazioni" />
+    </ShowAsCollectionAssociation>
   </Class>
   <Class Name="Ascensore_thread_school.Persona">
     <Position X="5.25" Y="1" Width="1.5" />
@@ -24,12 +28,12 @@
       </Enum>
     </NestedTypes>
     <TypeIdentifier>
-      <HashCode>AACAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAA=</HashCode>
+      <HashCode>AACAIAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAA=</HashCode>
       <FileName>Persona.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Ascensore_thread_school.Prenotazione">
-    <Position X="5.25" Y="2.75" Width="1.5" />
+    <Position X="8.25" Y="2.5" Width="1.5" />
     <NestedTypes>
       <Enum Name="Ascensore_thread_school.Prenotazione.Piano" Collapsed="true">
         <TypeIdentifier>
@@ -38,9 +42,12 @@
       </Enum>
     </NestedTypes>
     <TypeIdentifier>
-      <HashCode>AAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAgAA=</HashCode>
+      <HashCode>AAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAACAAgAA=</HashCode>
       <FileName>Prenotazione.cs</FileName>
     </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_persona" />
+    </ShowAsAssociation>
   </Class>
   <Font Name="Segoe UI" Size="9" />
 </ClassDiagram>

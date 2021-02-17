@@ -1,0 +1,15 @@
+D:\scuola\Informatica\Ascensore_thread_school\Ascensore_thread_school\bin\Debug\Ascensore_thread_school.exe.config
+D:\scuola\Informatica\Ascensore_thread_school\Ascensore_thread_school\bin\Debug\Ascensore_thread_school.exe
+D:\scuola\Informatica\Ascensore_thread_school\Ascensore_thread_school\bin\Debug\Ascensore_thread_school.pdb
+D:\scuola\Informatica\Ascensore_thread_school\Ascensore_thread_school\obj\Debug\Ascensore_thread_school.csprojAssemblyReference.cache
+D:\scuola\Informatica\Ascensore_thread_school\Ascensore_thread_school\obj\Debug\MainWindow.g.cs
+D:\scuola\Informatica\Ascensore_thread_school\Ascensore_thread_school\obj\Debug\App.g.cs
+D:\scuola\Informatica\Ascensore_thread_school\Ascensore_thread_school\obj\Debug\Ascensore_thread_school_MarkupCompile.cache
+D:\scuola\Informatica\Ascensore_thread_school\Ascensore_thread_school\obj\Debug\Ascensore_thread_school_MarkupCompile.lref
+D:\scuola\Informatica\Ascensore_thread_school\Ascensore_thread_school\obj\Debug\MainWindow.baml
+D:\scuola\Informatica\Ascensore_thread_school\Ascensore_thread_school\obj\Debug\Ascensore_thread_school.g.resources
+D:\scuola\Informatica\Ascensore_thread_school\Ascensore_thread_school\obj\Debug\Ascensore_thread_school.Properties.Resources.resources
+D:\scuola\Informatica\Ascensore_thread_school\Ascensore_thread_school\obj\Debug\Ascensore_thread_school.csproj.GenerateResource.cache
+D:\scuola\Informatica\Ascensore_thread_school\Ascensore_thread_school\obj\Debug\Ascensore_thread_school.csproj.CoreCompileInputs.cache
+D:\scuola\Informatica\Ascensore_thread_school\Ascensore_thread_school\obj\Debug\Ascensore_thread_school.exe
+D:\scuola\Informatica\Ascensore_thread_school\Ascensore_thread_school\obj\Debug\Ascensore_thread_school.pdb
