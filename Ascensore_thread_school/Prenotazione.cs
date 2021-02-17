@@ -21,8 +21,24 @@ namespace Ascensore_thread_school
 
             if (_pianoArrivo == _pianoPartenza)
                 throw new Exception("partenza e arrivo sono uguali");
+        }
 
 
+        public int Arrivo
+        {
+            get
+            {
+                return (int)_pianoArrivo;
+            }
+
+        }
+
+        public int Partenza
+        {
+            get
+            {
+                return (int)_pianoPartenza;
+            }
         }
     }
 }

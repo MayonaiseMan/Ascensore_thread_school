@@ -17,14 +17,13 @@ namespace Ascensore_thread_school
                 _nome = nome;
             else throw new Exception("nome non valido");
 
-            Posizione = (Piano)piano;
-            
+            Posizione = (Piano)piano;            
         }
 
         public Piano Posizione 
         { 
             get => _posizione; 
-            set => _posizione = value; 
+            private set => _posizione = value; 
         }
     }
 }

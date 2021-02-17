@@ -5,8 +5,13 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Ascensore_thread_school"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="550" Width="800">
     <Grid>
-        
+        <Label x:Name="Piano5_lbl" Content="Piano 5:" HorizontalAlignment="Left" Margin="500,50,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="Piano4_lbl" Content="Piano 4: " HorizontalAlignment="Left" Margin="500,150,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="Piano3_lbl" Content="Piano 3: " HorizontalAlignment="Left" Margin="500,250,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="Piano2_lbl" Content="Piano 2:" HorizontalAlignment="Left" Margin="500,350,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="Piano1_lbl" Content="Piano 1: " HorizontalAlignment="Left" Margin="500,450,0,0" VerticalAlignment="Top"/>
+
     </Grid>
 </Window>
