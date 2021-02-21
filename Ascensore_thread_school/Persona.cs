@@ -20,6 +20,14 @@ namespace Ascensore_thread_school
             Posizione = (Piano)piano;            
         }
 
+        public string Nome
+        {
+            get
+            {
+                return _nome;
+            }
+        }
+
         public Piano Posizione 
         { 
             get => _posizione; 

@@ -21,7 +21,7 @@ namespace Ascensore_thread_school
     public partial class MainWindow : Window
     {
         Ascensore _ascensore;
-        Dictionary<string, int> personePiano;
+        public Dictionary<string, int> personePiano;
         public MainWindow()
         {
             InitializeComponent();
@@ -44,6 +44,7 @@ namespace Ascensore_thread_school
                 Persona p = new Persona("Persona", int.Parse(from_txt.Text));
                 Prenotazione pren = new Prenotazione(p, int.Parse(to_txt.Text));
                 _ascensore.AddPrenotazione(pren);
+                prenotazione_lst.Items.Add(p.Nome+"  "+pren.Partenza +"  "+pren.Arrivo);
             } 
             catch (Exception ex)
             {
@@ -64,17 +65,27 @@ namespace Ascensore_thread_school
 
             AggiornaPiani();
 
+
+            int b = 0;
             _ascensore.Avanza();
             Add_btn.IsEnabled = true;
         }
 
         public void AggiornaPiani()
         {
-            Piano1_lbl.Content = "Piano 1: " + personePiano["Piano1"];
-            Piano2_lbl.Content = "Piano 2: " + personePiano["Piano2"];
-            Piano3_lbl.Content = "Piano 3: " + personePiano["Piano3"];
-            Piano4_lbl.Content = "Piano 4: " + personePiano["Piano4"];
-            Piano5_lbl.Content = "Piano 5: " + personePiano["Piano5"];
+            int a = personePiano["Piano1"];
+            Piano1_lbl.Content = "Piano 1: " + a;
+            int b =personePiano["Piano2"];
+            Piano2_lbl.Content = "Piano 2: " + b;
+            int c =personePiano["Piano3"];
+            Piano3_lbl.Content = "Piano 3: " + c;
+            int d =personePiano["Piano4"];
+            Piano4_lbl.Content = "Piano 4: " + d;
+            int e =personePiano["Piano5"];
+            Piano5_lbl.Content = "Piano 5: " +e;
         }
+
+       
+
     }
 }

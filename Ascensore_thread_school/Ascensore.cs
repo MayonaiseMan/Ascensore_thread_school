@@ -58,7 +58,7 @@ namespace Ascensore_thread_school
         {
             aggiungiPersona.Start();
             Esecuzione.Start();
-        
+            _main.lancia_btn.IsEnabled = false;
         }
 
         private void CambiaPiano(int a)
@@ -66,6 +66,18 @@ namespace Ascensore_thread_school
             int tmp = (int)_posizione;
             _posizione = (Piano)a;
             int spostamento = ((tmp - (int)_posizione) * DISTANZA_PIANO) +  QUOTA; // differenza tra i piani + la distanza tra due piani e una quota statica
+
+            int volte = Math.Abs(spostamento / 100);
+            
+                _main.Dispatcher.BeginInvoke(new Action(() =>
+                {
+                    for (int i = 0; i < volte; i++)
+                    {
+                        _main.asc_img.Margin = new System.Windows.Thickness(_main.asc_img.Margin.Left, _main.asc_img.Margin.Top + (spostamento / 100), 0, 0);
+                    }
+                }));
+            
+           
             
 
         }
@@ -79,8 +91,19 @@ namespace Ascensore_thread_school
                     lock (_blocco)
                     {
                         Prenotazione p = _prenotazioni.Dequeue();
+
+                        _main.Dispatcher.BeginInvoke(new Action(() =>
+                        {
+                            int tmp = (int)p.Partenza;
+                            string s = "Piano" + tmp;
+                            _main.personePiano[s]--;
+                            _main.AggiornaPiani();
+
+                        }));
+
                         CambiaPiano(p.Partenza);
-                        _personeDentroAscensore.Enqueue(p);                        
+                        _personeDentroAscensore.Enqueue(p);
+                       
                     }
                 }
             }
@@ -89,7 +112,7 @@ namespace Ascensore_thread_school
 
         private void ScaricaPersona()
         {
-            while(_personeDentroAscensore.Count > 0 && _prenotazioni.Count > 0)
+            while(_personeDentroAscensore.Count > 0)
             {
                 if (_personeDentroAscensore.Count > 0)
                 {
@@ -97,7 +120,18 @@ namespace Ascensore_thread_school
                     {
                         Prenotazione p = _personeDentroAscensore.Peek();
                         CambiaPiano(p.Arrivo);
+
+                        _main.Dispatcher.BeginInvoke(new Action(() =>
+                        {
+                            int tmp = (int)p.Arrivo;
+                            string s = "Piano" + tmp;
+                            _main.personePiano[s]++;
+                            _main.AggiornaPiani();
+
+                        }));
+                                                 
                         _personeDentroAscensore.Dequeue();
+                        
                     }
                 }
             }            
