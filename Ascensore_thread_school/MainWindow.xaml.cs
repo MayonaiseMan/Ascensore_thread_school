@@ -26,6 +26,7 @@ namespace Ascensore_thread_school
         {
             InitializeComponent();
             _ascensore = new Ascensore(this);
+            ok_btn.IsEnabled = false;
             personePiano = new Dictionary<string, int>();
             personePiano.Add("Piano1",0);
             personePiano.Add("Piano2", 0);
@@ -54,7 +55,7 @@ namespace Ascensore_thread_school
 
         private void lancia_btn_Click(object sender, RoutedEventArgs e)
         {
-            Add_btn.IsEnabled = false;
+            
 
             foreach(Prenotazione a in _ascensore.Prenotazioni)
             {
@@ -64,11 +65,10 @@ namespace Ascensore_thread_school
             }
 
             AggiornaPiani();
+            ok_btn.IsEnabled = true;
 
-
-            int b = 0;
-            _ascensore.Avanza();
-            Add_btn.IsEnabled = true;
+            
+            
         }
 
         public void AggiornaPiani()
@@ -85,7 +85,9 @@ namespace Ascensore_thread_school
             Piano5_lbl.Content = "Piano 5: " +e;
         }
 
-       
-
+        private void ok_btn_Click(object sender, RoutedEventArgs e)
+        {
+            _ascensore.Avanza();
+        }
     }
 }

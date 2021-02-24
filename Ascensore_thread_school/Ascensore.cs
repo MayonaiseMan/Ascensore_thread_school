@@ -8,7 +8,7 @@ namespace Ascensore_thread_school
 {
     public class Ascensore
     {
-        enum Piano { terra = 0, primo = 1, secondo = 2, terzo = 3, quarto = 4}
+        enum Piano { terra = 0, primo = 1, secondo = 2, terzo = 3, quarto = 4 }
         Piano _posizione;
         Queue<Prenotazione> _prenotazioni;
         Queue<Prenotazione> _personeDentroAscensore;
@@ -27,7 +27,7 @@ namespace Ascensore_thread_school
             _prenotazioni = new Queue<Prenotazione>();
             _personeDentroAscensore = new Queue<Prenotazione>();
             _posizione = 0;
-            
+
 
             aggiungiPersona = new Thread(new ThreadStart(CaricaPersona));
             Esecuzione = new Thread(new ThreadStart(ScaricaPersona));
@@ -65,31 +65,35 @@ namespace Ascensore_thread_school
         {
             int tmp = (int)_posizione;
             _posizione = (Piano)a;
-            int spostamento = ((tmp - (int)_posizione) * DISTANZA_PIANO) +  QUOTA; // differenza tra i piani + la distanza tra due piani e una quota statica
+            int spostamento = ((tmp - (int)_posizione) * DISTANZA_PIANO) + QUOTA; // differenza tra i piani + la distanza tra due piani e una quota statica
 
             int volte = Math.Abs(spostamento / 100);
-            
+
+
+            for (int i = 0; i < volte; i++)
+            {
                 _main.Dispatcher.BeginInvoke(new Action(() =>
                 {
-                    for (int i = 0; i < volte; i++)
-                    {
-                        _main.asc_img.Margin = new System.Windows.Thickness(_main.asc_img.Margin.Left, _main.asc_img.Margin.Top + (spostamento / 100), 0, 0);
-                    }
+                    _main.asc_img.Margin = new System.Windows.Thickness(_main.asc_img.Margin.Left, _main.asc_img.Margin.Top + (spostamento / 100), 0, 0);
+                    Thread.Sleep(TimeSpan.FromMilliseconds(100));
                 }));
-            
-           
-            
+            }
+
+
+
+
 
         }
 
         private void CaricaPersona()
         {
-            while (_prenotazioni.Count > 0)
+            while (true)
             {
-                if (_personeDentroAscensore.Count < 3)
+                if (_personeDentroAscensore.Count < 3 && _prenotazioni.Count > 0)
                 {
                     lock (_blocco)
                     {
+
                         Prenotazione p = _prenotazioni.Dequeue();
 
                         _main.Dispatcher.BeginInvoke(new Action(() =>
@@ -103,16 +107,17 @@ namespace Ascensore_thread_school
 
                         CambiaPiano(p.Partenza);
                         _personeDentroAscensore.Enqueue(p);
-                       
+                        Thread.Sleep(TimeSpan.FromMilliseconds(100));
+
                     }
                 }
             }
-               
+
         }
 
         private void ScaricaPersona()
         {
-            while(_personeDentroAscensore.Count > 0)
+            while (true)
             {
                 if (_personeDentroAscensore.Count > 0)
                 {
@@ -129,12 +134,12 @@ namespace Ascensore_thread_school
                             _main.AggiornaPiani();
 
                         }));
-                                                 
+
                         _personeDentroAscensore.Dequeue();
-                        
+                        Thread.Sleep(TimeSpan.FromMilliseconds(100));
                     }
                 }
-            }            
+            }
         }
 
 

@@ -23,6 +23,7 @@
         <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="1" Margin="206,320,0,0" Stroke="Black" VerticalAlignment="Top" Width="349"/>
         <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="1" Margin="206,420,0,0" Stroke="Black" VerticalAlignment="Top" Width="349"/>
         <Image x:Name="asc_img" HorizontalAlignment="Left" Height="101" Margin="45,220,0,0" VerticalAlignment="Top" Width="109" Source="ascensore.png"/>
+        <Button x:Name="ok_btn" Content="Ok" HorizontalAlignment="Left" Margin="577,340,0,0" VerticalAlignment="Top" Width="207" Click="ok_btn_Click" />
 
     </Grid>
 </Window>
