@@ -17,13 +17,14 @@
         <TextBox x:Name="to_txt" HorizontalAlignment="Left" Height="23" Margin="724,262,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60"/>
         <Label Content="Da&#x9;&#x9;&#x9;Verso" HorizontalAlignment="Left" Margin="577,236,0,0" VerticalAlignment="Top" Width="207"/>
         <Button x:Name="Add_btn" Content="Add" HorizontalAlignment="Left" Margin="577,290,0,0" VerticalAlignment="Top" Width="207" Click="Add_btn_Click" />
-        <Button x:Name="lancia_btn" Content="Simula" HorizontalAlignment="Left" Margin="577,315,0,0" VerticalAlignment="Top" Width="207" Click="lancia_btn_Click"/>
+        <Button x:Name="lancia_btn" Content="Simula" HorizontalAlignment="Left" Margin="577,395,0,0" VerticalAlignment="Top" Width="207" Click="lancia_btn_Click"/>
         <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="1" Margin="206,120,0,0" Stroke="Black" VerticalAlignment="Top" Width="349"/>
         <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="1" Margin="203,220,0,0" Stroke="Black" VerticalAlignment="Top" Width="349"/>
         <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="1" Margin="206,320,0,0" Stroke="Black" VerticalAlignment="Top" Width="349"/>
         <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="1" Margin="206,420,0,0" Stroke="Black" VerticalAlignment="Top" Width="349"/>
         <Image x:Name="asc_img" HorizontalAlignment="Left" Height="101" Margin="45,220,0,0" VerticalAlignment="Top" Width="109" Source="ascensore.png"/>
-        <Button x:Name="ok_btn" Content="Ok" HorizontalAlignment="Left" Margin="577,340,0,0" VerticalAlignment="Top" Width="207" Click="ok_btn_Click" />
+        <Button x:Name="ok_btn" Content="Ok" HorizontalAlignment="Left" Margin="577,420,0,0" VerticalAlignment="Top" Width="207" Click="ok_btn_Click" />
+        <Button x:Name="clear_btn" Content="Clear listbox" HorizontalAlignment="Left" Margin="577,315,0,0" VerticalAlignment="Top" Width="207" Click="clear_btn_Click"/>
 
     </Grid>
 </Window>

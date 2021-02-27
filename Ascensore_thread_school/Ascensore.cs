@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading;
-
+using System.Windows;
 namespace Ascensore_thread_school
 {
     public class Ascensore
     {
-        enum Piano { terra = 0, primo = 1, secondo = 2, terzo = 3, quarto = 4 }
+        enum Piano { Piano1 = 1, Piano2 = 2, Piano3 = 3, Piano4 = 4, Piano5 = 5 }
         Piano _posizione;
         Queue<Prenotazione> _prenotazioni;
         Queue<Prenotazione> _personeDentroAscensore;
@@ -26,7 +26,7 @@ namespace Ascensore_thread_school
         {
             _prenotazioni = new Queue<Prenotazione>();
             _personeDentroAscensore = new Queue<Prenotazione>();
-            _posizione = 0;
+            _posizione = (Piano)3;
 
 
             aggiungiPersona = new Thread(new ThreadStart(CaricaPersona));
@@ -57,6 +57,7 @@ namespace Ascensore_thread_school
         public void Avanza()
         {
             aggiungiPersona.Start();
+            
             Esecuzione.Start();
             _main.lancia_btn.IsEnabled = false;
         }
@@ -65,24 +66,15 @@ namespace Ascensore_thread_school
         {
             int tmp = (int)_posizione;
             _posizione = (Piano)a;
-            int spostamento = ((tmp - (int)_posizione) * DISTANZA_PIANO) + QUOTA; // differenza tra i piani + la distanza tra due piani e una quota statica
-
-            int volte = Math.Abs(spostamento / 100);
-
-
-            for (int i = 0; i < volte; i++)
+            int spostamento = ((tmp - a) * DISTANZA_PIANO); // differenza tra i piani + la distanza tra due piani e una quota statica
+                                    
+            _main.asc_img.Dispatcher.BeginInvoke(new Action(() =>
             {
-                _main.Dispatcher.BeginInvoke(new Action(() =>
-                {
-                    _main.asc_img.Margin = new System.Windows.Thickness(_main.asc_img.Margin.Left, _main.asc_img.Margin.Top + (spostamento / 100), 0, 0);
-                    Thread.Sleep(TimeSpan.FromMilliseconds(100));
-                }));
-            }
+                _main.asc_img.Margin = new System.Windows.Thickness(_main.asc_img.Margin.Left, _main.asc_img.Margin.Top + (spostamento), 0, 0);
+            }));
 
-
-
-
-
+            Thread.Sleep(TimeSpan.FromMilliseconds(500));
+            
         }
 
         private void CaricaPersona()
@@ -94,7 +86,7 @@ namespace Ascensore_thread_school
                     lock (_blocco)
                     {
 
-                        Prenotazione p = _prenotazioni.Dequeue();
+                        Prenotazione p = _prenotazioni.Peek();
 
                         _main.Dispatcher.BeginInvoke(new Action(() =>
                         {
@@ -105,12 +97,15 @@ namespace Ascensore_thread_school
 
                         }));
 
-                        CambiaPiano(p.Partenza);
-                        _personeDentroAscensore.Enqueue(p);
-                        Thread.Sleep(TimeSpan.FromMilliseconds(100));
+                        CambiaPiano((int)p.Partenza);
 
+                        _prenotazioni.Dequeue();
+                        _personeDentroAscensore.Enqueue(p);                       
                     }
                 }
+
+                if (_personeDentroAscensore.Count == 0 && _prenotazioni.Count == 0)
+                    break;
             }
 
         }
@@ -136,9 +131,12 @@ namespace Ascensore_thread_school
                         }));
 
                         _personeDentroAscensore.Dequeue();
-                        Thread.Sleep(TimeSpan.FromMilliseconds(100));
+                        
                     }
                 }
+
+                if (_personeDentroAscensore.Count == 0 && _prenotazioni.Count == 0)
+                    break;
             }
         }
 

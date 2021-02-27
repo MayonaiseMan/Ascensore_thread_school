@@ -28,14 +28,18 @@ namespace Ascensore_thread_school
             _ascensore = new Ascensore(this);
             ok_btn.IsEnabled = false;
             personePiano = new Dictionary<string, int>();
-            personePiano.Add("Piano1",0);
+            Clear();
+        }
+
+        private void Clear()
+        {
+            personePiano.Clear();
+            personePiano.Add("Piano1", 0);
             personePiano.Add("Piano2", 0);
             personePiano.Add("Piano3", 0);
             personePiano.Add("Piano4", 0);
             personePiano.Add("Piano5", 0);
         }
-
-        
 
 
         private void Add_btn_Click(object sender, RoutedEventArgs e)
@@ -55,7 +59,8 @@ namespace Ascensore_thread_school
 
         private void lancia_btn_Click(object sender, RoutedEventArgs e)
         {
-            
+
+            Clear();
 
             foreach(Prenotazione a in _ascensore.Prenotazioni)
             {
@@ -88,6 +93,21 @@ namespace Ascensore_thread_school
         private void ok_btn_Click(object sender, RoutedEventArgs e)
         {
             _ascensore.Avanza();
+        }
+
+        private void clear_btn_Click(object sender, RoutedEventArgs e)
+        {
+            prenotazione_lst.Items.Clear();
+            Clear();
+            AggiornaPiani();
+        }
+
+
+
+        public void spostaAscensore(double spostamento)
+        {
+           
+                        
         }
     }
 }
